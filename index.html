@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pixels Fotografía y Video · Córdoba, Argentina</title>
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600480/camara_z0x9ag.png">
+<meta property="og:title" content="Pixels Fotografía y Video · Córdoba">
+<meta property="og:description" content="Fotografía profesional de bodas y eventos en Córdoba. La fiesta dura una noche, el recuerdo es para siempre.">
+<meta property="og:image" content="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600480/camara_z0x9ag.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ═══════════════════════════════════════════════
+     GA4 — Reemplazá G-XXXXXXXXXX con tu Measurement ID
+     Encontralo en: Analytics → Admin → Data Streams
+     ═══════════════════════════════════════════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- ═══════════════════════════════════════════════
+     META PIXEL — Reemplazá TU_PIXEL_ID con tu Pixel ID
+     Encontralo en: Meta Business Suite → Events Manager
+     ═══════════════════════════════════════════════ -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'TU_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/>
+</noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+:root {
+  --gold:       #a99076;
+  --gold-light: #c4a882;
+  --cream:      #e3dbce;
+  --dark:       #1a150f;
+  --dark2:      #221b13;
+  --dark3:      #2e2318;
+  --soft:       rgba(227,219,206,.72);
+  --muted:      rgba(163,144,118,.55);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--dark);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+}
+
+section { padding: 5rem 2rem; }
+.container { max-width: 1150px; margin: auto; }
+
+/* ── UTILIDADES ── */
+
+.stag {
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+}
+
+.stag-line {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+.stag-line::before {
+  content: '';
+  width: 1.8rem;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.2rem;
+  background: var(--gold);
+  color: var(--dark);
+  text-decoration: none;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-family: 'Jost', sans-serif;
+  transition: .25s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.btn:hover { opacity: .88; transform: translateY(-2px); }
+
+.btn-dark {
+  display: inline-block;
+  padding: 1rem 2.2rem;
+  background: var(--dark);
+  color: var(--cream);
+  text-decoration: none;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-family: 'Jost', sans-serif;
+  border: 1px solid rgba(227,219,206,.15);
+  transition: .25s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.btn-dark:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ══ NAV ══ */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(26,21,15,.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-logo img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.nav .btn {
+  font-size: .72rem;
+  padding: .75rem 1.4rem;
+  white-space: nowrap;
+}
+
+/* ══ HERO ══ */
+
+.hero {
+  padding: 4rem 1.5rem 4rem;
+  background: var(--dark);
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 10vw, 6.5rem);
+  line-height: .98;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em { color: var(--gold); font-style: italic; }
+
+.hero-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 4vw, 1.45rem);
+  font-weight: 500;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+.hero-body {
+  max-width: 560px;
+  margin-bottom: .7rem;
+  font-size: clamp(.9rem, 3.5vw, .95rem);
+  color: var(--soft);
+  line-height: 1.85;
+}
+
+.hero-note {
+  font-size: clamp(.9rem, 3.5vw, .95rem);
+  color: var(--soft);
+  margin-bottom: 2.2rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-actions .btn {
+  font-size: clamp(.82rem, 3.5vw, .8rem);
+  padding: 1.1rem 2rem;
+}
+
+.hero-proof {
+  font-size: .88rem;
+  color: var(--gold);
+}
+.hero-proof strong { font-weight: 600; }
+
+/* ══ EL MIEDO REAL ══ */
+
+.miedo { background: var(--dark2); }
+
+.miedo h2 {
+  font-size: clamp(1.9rem, 6vw, 4rem);
+  line-height: 1.12;
+  margin-bottom: 3rem;
+}
+.miedo h2 span { color: var(--muted); display: block; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  border: 1px solid rgba(163,144,118,.15);
+}
+
+.card {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid rgba(163,144,118,.15);
+}
+.card:last-child { border-right: none; }
+
+.card-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(163,144,118,.22);
+  line-height: 1;
+  margin-bottom: 1.1rem;
+  display: block;
+}
+
+.card-title {
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(.88rem, 3.5vw, .87rem);
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: .9rem;
+  line-height: 1.55;
+}
+
+.card-body {
+  font-size: clamp(.82rem, 3vw, .8rem);
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+/* ══ LO QUE CAMBIA — fotos ══ */
+
+.cambia-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cambia-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0;
+}
+
+.cambia-photos img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  filter: brightness(.88);
+  transition: filter .35s ease, transform .35s ease;
+}
+
+.cambia-photos img:hover {
+  filter: brightness(1);
+  transform: scale(1.02);
+}
+
+/* ══ LO QUE CAMBIA ══ */
+
+.cambia { background: var(--dark); }
+
+.cambia-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.cambia-left h2 {
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  line-height: 1.08;
+  margin-bottom: 1.8rem;
+}
+.cambia-left h2 em { color: var(--gold); font-style: italic; }
+
+.cambia-body {
+  font-size: clamp(.88rem, 3.5vw, .9rem);
+  line-height: 1.95;
+  color: var(--soft);
+  margin-bottom: 2rem;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .95rem;
+}
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .9rem;
+  font-size: clamp(.84rem, 3.5vw, .85rem);
+  color: var(--soft);
+  line-height: 1.65;
+}
+.feature-list li::before {
+  content: '→';
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: .05rem;
+}
+
+.quote-box {
+  border-left: 2px solid var(--gold);
+  padding: 2.5rem 2.5rem;
+  background: var(--dark2);
+}
+
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 3.5vw, 1.65rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--cream);
+  margin-bottom: 1.8rem;
+}
+
+.quote-author {
+  font-size: .65rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ══ MI PROPUESTA ══ */
+
+.propuesta { background: var(--dark3); text-align: center; }
+
+.propuesta h2 {
+  font-size: clamp(2.2rem, 7vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+.propuesta h2 em { color: var(--gold); font-style: italic; display: block; }
+
+.propuesta-body {
+  font-size: clamp(.88rem, 3.5vw, .9rem);
+  color: var(--soft);
+  line-height: 1.9;
+  max-width: 650px;
+  margin: 0 auto 3.5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  border: 1px solid rgba(163,144,118,.15);
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.service-card {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid rgba(163,144,118,.15);
+}
+.service-card:last-child { border-right: none; }
+
+.diamond-icon {
+  width: 14px;
+  height: 14px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  margin-bottom: 1.5rem;
+  opacity: .8;
+}
+
+.service-name {
+  font-size: clamp(.9rem, 3.5vw, .88rem);
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: .8rem;
+  line-height: 1.4;
+}
+
+.service-desc {
+  font-size: clamp(.82rem, 3vw, .8rem);
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.propuesta-footnote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 3.5vw, 1.05rem);
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.propuesta-sub {
+  font-size: .72rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  letter-spacing: .05em;
+}
+
+/* ══ TESTIMONIOS ══ */
+
+.testimonios { background: var(--dark2); }
+
+.testimonios-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.testimonios-header h2 {
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: .5rem;
+}
+.testimonios-header h2 em { color: var(--gold); font-style: italic; }
+
+.testimonios-sub {
+  font-size: .8rem;
+  color: var(--muted);
+  letter-spacing: .1em;
+  margin-top: .4rem;
+}
+
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonio-card {
+  background: var(--dark3);
+  border: 1px solid rgba(163,144,118,.14);
+  padding: 2.2rem 2rem 2rem;
+  transition: border-color .25s ease, transform .25s ease;
+}
+.testimonio-card:hover {
+  border-color: rgba(169,144,118,.38);
+  transform: translateY(-3px);
+}
+
+.testimonio-estrellas {
+  display: flex;
+  gap: .15rem;
+  margin-bottom: 1.3rem;
+}
+.estrella {
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+
+.testimonio-texto {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+
+.testimonio-autor {
+  font-size: .66rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.testimonios-cta {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+/* ══ PROCESO ══ */
+
+.proceso { background: var(--dark); text-align: center; }
+
+.proceso h2 {
+  font-size: clamp(1.9rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 4rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.step { text-align: center; }
+
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: rgba(163,144,118,.22);
+  line-height: 1;
+  margin-bottom: .8rem;
+}
+
+.step-label {
+  font-size: .62rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: .9rem;
+}
+
+.step-body {
+  font-size: clamp(.84rem, 3.5vw, .82rem);
+  color: var(--soft);
+  line-height: 1.85;
+  max-width: 220px;
+  margin: auto;
+}
+
+/* ══ CTA FINAL ══ */
+
+.cta-final { background: var(--dark3); text-align: center; }
+
+.cta-final h2 {
+  font-size: clamp(3rem, 11vw, 7rem);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+.cta-final h2 em { color: var(--gold); font-style: italic; }
+
+.cta-final > .container > p {
+  max-width: 550px;
+  margin: 0 auto 2.5rem;
+  color: var(--soft);
+  font-size: clamp(.9rem, 3.5vw, .95rem);
+  line-height: 1.85;
+}
+
+.cta-final .btn {
+  font-size: clamp(.82rem, 3.5vw, .8rem);
+  padding: 1.15rem 2.2rem;
+}
+
+.cta-details {
+  margin-top: 1.8rem;
+  font-size: .82rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.cta-details a { color: var(--gold); text-decoration: none; transition: opacity .2s; }
+.cta-details a:hover { opacity: .75; }
+
+/* ══ FOOTER ══ */
+
+footer {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(163,144,118,.12);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: .04em;
+}
+
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a {
+  font-size: .78rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: .06em;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--cream); }
+
+/* ══ HERO SPLIT (foto vertical + texto) ══ */
+
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 0;
+  align-items: center;
+  min-height: 88vh;
+  padding: 3rem 4rem 3rem 1.5rem;
+}
+
+.hero-split-text {
+  padding: 2rem 3rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-split-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 3/4;
+  max-height: 580px;
+}
+
+.hero-split-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+.hero-img-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.4rem 1.8rem;
+  background: rgba(26,21,15,.88);
+  backdrop-filter: blur(6px);
+}
+
+.hero-img-badge .badge-title {
+  font-family: 'Jost', sans-serif;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: .25rem;
+  letter-spacing: .04em;
+}
+
+.hero-img-badge .badge-sub {
+  font-size: .78rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* separación frase fechas vs botón */
+.hero-proof-date {
+  font-size: .88rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* ══ GALERÍA RECUERDOS ══ */
+
+.recuerdos { background: var(--dark2); padding: 5rem 2rem; }
+
+.recuerdos-header {
+  margin-bottom: 2.5rem;
+}
+
+.recuerdos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.recuerdos-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease, filter .4s ease;
+  filter: brightness(.9);
+}
+
+.recuerdos-grid img:hover {
+  transform: scale(1.02);
+  filter: brightness(1);
+}
+
+/* ══ ADAPTADOS BLOCK ══ */
+
+.adaptados {
+  background: var(--dark3);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(163,144,118,.12);
+  border-bottom: 1px solid rgba(163,144,118,.12);
+}
+
+.adaptados-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.adaptados-inner p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 4vw, 1.7rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.adaptados-inner .adaptados-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: .85rem;
+  font-style: normal;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* ══ WHATSAPP FLOTANTE ══ */
+
+.wa-float {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 1.5rem;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  transition: transform .25s ease, box-shadow .25s ease;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.wa-float:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 8px 28px rgba(37,211,102,.55);
+}
+.wa-float svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+/* ══ RESPONSIVE ══ */
+
+@media (max-width: 1100px) {
+  .hero-split { grid-template-columns: 1fr 360px; padding: 2.5rem 2.5rem 2.5rem 1.5rem; }
+}
+
+@media (max-width: 900px) {
+  /* Hero: texto arriba, foto abajo en mobile/tablet */
+  .hero-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: auto;
+    padding: 0;
+    gap: 0;
+  }
+  .hero-split-text {
+    padding: 3rem 1.5rem 2rem;
+    order: 1;
+  }
+  .hero-split-img {
+    order: 2;
+    width: 100%;
+    aspect-ratio: 4/3;
+    max-height: 56vw;
+    min-height: 260px;
+    border-radius: 0;
+  }
+
+  .recuerdos-grid { grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+  .cambia-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .cambia-photos { grid-template-columns: 1fr 1fr; }
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+  .card { border-right: none; border-bottom: 1px solid rgba(163,144,118,.15); }
+  .card:nth-child(odd) { border-right: 1px solid rgba(163,144,118,.15); }
+  .card:last-child { border-bottom: none; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .service-card { border-right: none; border-bottom: 1px solid rgba(163,144,118,.15); }
+  .service-card:nth-child(odd) { border-right: 1px solid rgba(163,144,118,.15); }
+  .service-card:last-child { border-bottom: none; }
+  .portfolio-card { padding: 3.5rem 2rem; }
+  .testimonios-grid { grid-template-columns: 1fr 1fr; }
+  .testimonio-card:last-child { grid-column: 1 / -1; max-width: 420px; margin: 0 auto; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 3.5rem 1.2rem; }
+  .recuerdos { padding: 3rem 1.2rem; }
+  .recuerdos-grid { grid-template-columns: 1fr; gap: .8rem; }
+
+  /* Hero mobile */
+  .hero-split-text { padding: 2.5rem 1.2rem 1.5rem; }
+  .hero-split-img { aspect-ratio: 4/3; max-height: none; min-height: 240px; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 1rem; }
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    font-size: .85rem;
+  }
+
+  /* Nav */
+  .nav { padding: .9rem 1.2rem; }
+  .nav-logo img { height: 28px; }
+  .nav .btn { font-size: .66rem; padding: .65rem .9rem; }
+
+  /* Grids */
+  .cards-grid, .services-grid { grid-template-columns: 1fr; }
+  .card, .service-card { border-right: none !important; }
+
+  /* Testimonios */
+  .testimonios-grid { grid-template-columns: 1fr; }
+  .testimonio-card:last-child { grid-column: auto; max-width: 100%; margin: 0; }
+  .testimonio-texto { font-size: 1.15rem; }
+
+  /* Portfolio */
+  .portfolio-card { padding: 3rem 1.5rem; }
+
+  /* Pasos */
+  .steps-grid { gap: 1.5rem; }
+
+  /* CTA final */
+  .cta-final .btn {
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    display: block;
+  }
+
+  /* Footer */
+  footer { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+
+  /* WA flotante más grande */
+  .wa-float { width: 62px; height: 62px; bottom: 1.5rem; right: 1.2rem; }
+  .wa-float svg { width: 34px; height: 34px; }
+}
+
+/* ══ LIGHTBOX ══ */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0,0,0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: background .35s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.lightbox-overlay.open {
+  background: rgba(0,0,0,.88);
+  pointer-events: all;
+  opacity: 1;
+}
+
+.lightbox-img {
+  max-width: min(90vw, 900px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 2px;
+  transform: scale(.92);
+  transition: transform .35s ease;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+
+.lightbox-overlay.open .lightbox-img {
+  transform: scale(1);
+}
+
+.lightbox-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gold);
+  width: 100%;
+  transform-origin: left;
+  animation: none;
+}
+
+.lightbox-overlay.open .lightbox-bar {
+  animation: lb-progress 3s linear forwards;
+}
+
+@keyframes lb-progress {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-size: 1.8rem;
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+  line-height: 1;
+  font-weight: 300;
+  font-family: 'Jost', sans-serif;
+  transition: color .2s;
+}
+.lightbox-close:hover { color: #fff; }
+
+/* todas las imágenes clickeables */
+img.lb-trigger {
+  cursor: zoom-in;
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600480/letras_vljkqr.png" alt="Pixels Fotografía y Video">
+  </a>
+  <a href="https://wa.me/543517364379?text=Hola%20Pixels%20%F0%9F%91%8B%0AQuiero%20consultar%20por%20cobertura%20para%20mi%20evento.%0ATipo%20de%20evento%3A%0AFecha%3A%0ADirecci%C3%B3n%20o%20sal%C3%B3n%3A" target="_blank" class="btn" onclick="gtag('event','click_wa_nav')">Quiero hablar con Pixels</a>
+</nav>
+
+<!-- 1 · HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-split">
+    <div class="hero-split-text">
+      <div class="stag-line stag" style="margin-bottom:1.8rem;">Pixels Fotografía y Video &nbsp;·&nbsp; Córdoba Capital, Argentina</div>
+      <h1>Tu evento dura un día.<br><em>Tus recuerdos duran toda la vida.</em></h1>
+      <p class="hero-question">¿Cómo elegirías revivir hoy el día más importante de tu vida?</p>
+      <p class="hero-body">Después del evento, las fotos y el video son lo único que queda. Nuestro trabajo es hacer que vuelvas a sentir cada abrazo, cada lágrima y cada sonrisa incluso dentro de 20 años.</p>
+      <p class="hero-proof-date">Las fechas más buscadas suelen reservarse con meses de anticipación.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/543517364379?text=Hola%20Pixels%20%F0%9F%91%8B%0AQuiero%20consultar%20por%20cobertura%20para%20mi%20evento.%0ATipo%20de%20evento%3A%0AFecha%3A%0ADirecci%C3%B3n%20o%20sal%C3%B3n%3A" target="_blank" class="btn" onclick="gtag('event','click_wa_hero');fbq('track','Lead')">Consultar mi fecha</a>
+        <p class="hero-proof"><strong>+200 familias</strong> ya guardaron sus recuerdos con Pixels</p>
+      </div>
+    </div>
+    <div class="hero-split-img">
+      <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/c_fill,g_faces,ar_3:4,w_900/v1756767915/DSC_0500_hyajoe.jpg" alt="Novios - Pixels Fotografía y Video">
+      <div class="hero-img-badge">
+        <p class="badge-title">Agenda limitada</p>
+        <p class="badge-sub">Solo tomamos cierta cantidad de eventos por mes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1b · ALGUNOS RECUERDOS -->
+<section class="recuerdos">
+  <div class="container">
+    <div class="recuerdos-header">
+      <div class="stag-line stag">Algunos recuerdos</div>
+    </div>
+    <div class="recuerdos-grid">
+      <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1778717344/Pixels_Fotografia_y_Video-270_hgvnjv.jpg" alt="Recuerdo 1 - Pixels">
+      <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1778717137/Pixels_Fotografia_y_Video-241_pm9hu9.jpg" alt="Recuerdo 2 - Pixels">
+      <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654994/Pixels_Fotograf%C3%ADa_y_Video-6_d77lyj.jpg" alt="Recuerdo 3 - Pixels">
+    </div>
+  </div>
+</section>
+
+<!-- 2 · EL MIEDO REAL -->
+<section class="miedo">
+  <div class="container">
+    <div class="stag-line stag" style="margin-bottom:2rem;">El miedo real</div>
+    <h2>Meses planeando cada detalle.<br><span>Pero hay algo que no te deja dormir.</span></h2>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-num">01</span>
+        <p class="card-title">¿Y si las fotos salen sin emoción?</p>
+        <p class="card-body">Un recuerdo mediocre puede arruinar todo lo que construiste para ese día.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">02</span>
+        <p class="card-title">¿Y si nadie captura los momentos importantes?</p>
+        <p class="card-body">La mirada de tu mamá. El abrazo que te quebró. Lo que nadie más vio.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">03</span>
+        <p class="card-title">"Yo no salgo bien en fotos."</p>
+        <p class="card-body">No necesitás posar. Solo vivir el momento. Nosotros hacemos el resto.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">04</span>
+        <p class="card-title">Gastar tanto y no volver a sentir nada.</p>
+        <p class="card-body">Querés recuerdos que te hagan volver exactamente a ese día.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · LO QUE CAMBIA -->
+<section class="cambia">
+  <div class="container">
+    <div class="cambia-inner">
+      <div class="cambia-left">
+        <div class="stag-line stag" style="margin-bottom:1.8rem;">Lo que cambia</div>
+        <h2>Del miedo<br>a la total<br><em>tranquilidad.</em></h2>
+        <p class="cambia-body">No necesitás saber posar. No necesitás experiencia frente a una cámara. Nuestro trabajo empieza antes del evento y no termina hasta que tenés en tus manos recuerdos que te hacen revivir cada emoción de ese día.</p>
+        <ul class="feature-list">
+          <li>Planificamos juntos cada momento clave antes del evento</li>
+          <li>Nos movemos con discreción — sin interrumpir, sin posar forzado</li>
+          <li>Edición con sensibilidad y estilo, no filtros genéricos</li>
+          <li>Adelanto de fotos esa misma noche — si lo deseás</li>
+          <li>Entrega completa en alta resolución, para siempre</li>
+        </ul>
+      </div>
+      <div class="cambia-right">
+        <div class="quote-box">
+          <p class="quote-text">"Nuestra meta es simple: que dentro de 20 años, al ver sus fotos, no solo recuerden cómo se veían — sino que revivan la alegría de ese día."</p>
+          <p class="quote-author">— Pixels Fotografía y Video</p>
+        </div>
+        <div class="cambia-photos">
+          <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1778718117/Pixels_Fotografia_y_Video-70_inunte.jpg" alt="Momento especial - Pixels">
+          <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1778718117/Pixels_Fotografia_y_Video-526_dwhiic.jpg" alt="Momento especial - Pixels">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · MI PROPUESTA -->
+<section class="propuesta">
+  <div class="container">
+    <div class="stag-line stag" style="justify-content:center;margin-bottom:1.5rem;">Nuestra propuesta para vos</div>
+    <h2>Un recuerdo completo,<em>hecho con intención.</em></h2>
+    <p class="propuesta-body">Trabajamos con paquetes diseñados para que ningún momento se pierda — desde la llegada hasta el último abrazo. Fotografía, video, drone, sesión previa y productos impresos que podés guardar para siempre.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="diamond-icon"></div>
+        <p class="service-name">Fotografía</p>
+        <p class="service-desc">Cobertura completa del evento, editada en alta calidad, con galería online y entrega en pendrive.</p>
+      </div>
+      <div class="service-card">
+        <div class="diamond-icon"></div>
+        <p class="service-name">Foto + Video + Drone</p>
+        <p class="service-desc">Todo lo anterior más video completo con tomas aéreas para un recuerdo cinematográfico.</p>
+      </div>
+      <div class="service-card">
+        <div class="diamond-icon"></div>
+        <p class="service-name">Sesión previa</p>
+        <p class="service-desc">Una experiencia pensada para conectar, relajarse y ante la cámara.</p>
+      </div>
+      <div class="service-card">
+        <div class="diamond-icon"></div>
+        <p class="service-name">Recuerdos impresos</p>
+        <p class="service-desc">Álbumes fotolibro, cuadros y cajas de madera para que tus fotos no queden solo en una pantalla.</p>
+      </div>
+    </div>
+    <p class="propuesta-footnote">Cada paquete se adapta a lo que necesitás. Los precios y detalles te los contamos en nuestra primera conversación.</p>
+    <a href="https://wa.me/543517364379?text=Hola%20Pixels%20%F0%9F%91%8B%0AQuiero%20consultar%20por%20cobertura%20para%20mi%20evento.%0ATipo%20de%20evento%3A%0AFecha%3A%0ADirecci%C3%B3n%20o%20sal%C3%B3n%3A" target="_blank" class="btn" onclick="gtag('event','click_wa_propuesta');fbq('track','Lead')">Quiero ver opciones para mi evento</a>
+    <p class="propuesta-sub">Te asesoramos según lo que realmente necesitás · Respondemos en menos de 24 horas</p>
+  </div>
+</section>
+
+<!-- 6 · TESTIMONIOS -->
+<section class="testimonios">
+  <div class="container">
+    <div class="testimonios-header">
+      <div class="stag-line stag" style="justify-content:center;margin-bottom:1.2rem;">Lo que dicen nuestras familias</div>
+      <h2>Ellas ya <em>vivieron</em> la diferencia.</h2>
+      <p class="testimonios-sub">★★★★★ &nbsp;·&nbsp; Más de 120 eventos en Córdoba</p>
+    </div>
+
+    <div class="testimonios-grid">
+
+      <div class="testimonio-card">
+        <div class="testimonio-estrellas">
+          <span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span>
+        </div>
+        <p class="testimonio-texto">"Volvería a elegirlos mil veces."</p>
+        <p class="testimonio-autor">— Camila &amp; Juan</p>
+      </div>
+
+      <div class="testimonio-card">
+        <div class="testimonio-estrellas">
+          <span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span>
+        </div>
+        <p class="testimonio-texto">"No sentimos presión ni poses incómodas."</p>
+        <p class="testimonio-autor">— Sofía</p>
+      </div>
+
+      <div class="testimonio-card">
+        <div class="testimonio-estrellas">
+          <span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span>
+        </div>
+        <p class="testimonio-texto">"En las fotos y el video vi lo feliz que estuve ese día."</p>
+        <p class="testimonio-autor">— Martina</p>
+      </div>
+
+    </div>
+
+    <div class="testimonios-cta">
+      <a href="https://wa.me/543517364379?text=Hola%20Pixels%20%F0%9F%91%8B%0AQuiero%20consultar%20por%20cobertura%20para%20mi%20evento.%0ATipo%20de%20evento%3A%0AFecha%3A%0ADirecci%C3%B3n%20o%20sal%C3%B3n%3A" target="_blank" class="btn" onclick="gtag('event','click_wa_testimonios');fbq('track','Lead')">Quiero que mi historia sea la próxima</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · PROCESO -->
+<section class="proceso">
+  <div class="container">
+    <h2>Así de fácil es empezar</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p class="step-label">Nos conocemos</p>
+        <p class="step-body">Hablamos por WhatsApp o en persona. Entendemos tu visión y te contamos cómo trabajamos.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p class="step-label">Elegís tu paquete</p>
+        <p class="step-body">Te presentamos las opciones y lo personalizamos para que se adapte exactamente a lo que buscás.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p class="step-label">Reservás tu fecha</p>
+        <p class="step-body">Con el 40% asegurás tu lugar. El resto lo pagás de forma flexible hasta el día del evento.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p class="step-label">Vivís tu día</p>
+        <p class="step-body">Vos disfrutás cada momento. Nosotros nos encargamos de que nada se pierda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <h2>Tu fecha<br><em>no espera.</em></h2>
+    <p>Octubre, noviembre y diciembre suelen agotarse primero. Si tu evento se acerca, consultanos hoy y verificá si todavía tenemos disponibilidad.<br><br>Solo tomamos una cantidad limitada de eventos por mes.</p>
+    <a href="https://wa.me/543517364379?text=Hola%20Pixels%20%F0%9F%91%8B%0AQuiero%20consultar%20por%20cobertura%20para%20mi%20evento.%0ATipo%20de%20evento%3A%0AFecha%3A%0ADirecci%C3%B3n%20o%20sal%C3%B3n%3A" target="_blank" class="btn" onclick="gtag('event','click_wa_cta_final');fbq('track','Lead')">Ver si mi fecha sigue libre</a>
+    <div class="cta-details">
+      <span>📍 Córdoba Capital, Argentina</span>
+      <span>·</span>
+      <a href="https://www.instagram.com/pixels_fotografia_y_video/" target="_blank">@pixels_fotografia_y_video</a>
+      <span>·</span>
+      <a href="tel:+543517364379">351 736 4379</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Pixels Fotografía y Video · Córdoba</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/pixels_fotografia_y_video/" target="_blank">Instagram</a>
+    <a href="https://wa.me/543517364379?text=Hola%20Pixels%20%F0%9F%91%8B%0AQuiero%20consultar%20por%20cobertura%20para%20mi%20evento.%0ATipo%20de%20evento%3A%0AFecha%3A%0ADirecci%C3%B3n%20o%20sal%C3%B3n%3A" target="_blank">WhatsApp</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/543517364379?text=Hola%20Pixels%20%F0%9F%91%8B%0AQuiero%20consultar%20por%20cobertura%20para%20mi%20evento.%0ATipo%20de%20evento%3A%0AFecha%3A%0ADirecci%C3%B3n%20o%20sal%C3%B3n%3A" target="_blank" class="wa-float" aria-label="Escribinos por WhatsApp" onclick="gtag('event','click_wa_flotante');fbq('track','Lead')">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+  <span class="lightbox-close" id="lb-close" aria-label="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lb-img" src="" alt="">
+  <div class="lightbox-bar" id="lb-bar"></div>
+</div>
+
+<script>
+(function () {
+  const overlay  = document.getElementById('lightbox');
+  const lbImg    = document.getElementById('lb-img');
+  const lbClose  = document.getElementById('lb-close');
+  const lbBar    = document.getElementById('lb-bar');
+  let   autoTimer = null;
+
+  /* Marcamos con clase lb-trigger todas las imágenes del sitio
+     excepto la del logo de navegación */
+  document.querySelectorAll('img').forEach(function (img) {
+    if (img.closest('.nav-logo')) return;    // excluir logo
+    if (img.closest('.wa-float'))  return;    // excluir ícono WA (svg, pero por si acaso)
+    img.classList.add('lb-trigger');
+    img.addEventListener('click', openLightbox);
+  });
+
+  function openLightbox(e) {
+    const src = e.currentTarget.src;
+    lbImg.src = src;
+    lbImg.alt = e.currentTarget.alt || '';
+
+    /* Resetear barra antes de re-añadir la clase open */
+    lbBar.style.animation = 'none';
+    lbBar.offsetWidth;          // forzar reflow
+    lbBar.style.animation = '';
+
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    clearTimeout(autoTimer);
+    autoTimer = setTimeout(closeLightbox, 3000);
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    clearTimeout(autoTimer);
+    setTimeout(function () { lbImg.src = ''; }, 350);
+  }
+
+  /* Cerrar al hacer click en el overlay (fuera de la foto) */
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay || e.target === lbClose) closeLightbox();
+  });
+
+  /* Cerrar con Escape */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
+
+</body>
+</html>
