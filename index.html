@@ -58,7 +58,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -67,20 +67,20 @@
 }
 
 :root {
-  --black:   #0a0a0a;
-  --dark:    #111111;
-  --dark2:   #1a1a1a;
-  --dark3:   #1a1a1a;
+  --black:   #0b120c;
+  --dark:    #121b13;
+  --dark2:   #1a251b;
+  --dark3:   #1a251b;
   --white:   #ffffff;
-  --cream:   #f5f0e8;
-  --gold:    #c9a96e;
-  --gold-light: #e2c9a0;
-  --gray:    #888888;
+  --cream:   #f4f2e9;
+  --gold:    #c9a355;
+  --gold-light: #ddbd78;
+  --gray:    #8b9386;
   --rust:    #b07040;
-  --soft:    rgba(245,240,232,0.72);
-  --muted:   rgba(201,169,110,0.55);
+  --soft:    rgba(244,242,233,0.72);
+  --muted:   rgba(201,163,85,0.55);
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Sora', sans-serif;
   --font-body:    'Montserrat', sans-serif;
   --max-w: 1200px;
 }
@@ -89,7 +89,9 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--dark);
+  background:
+    radial-gradient(ellipse 1100px 800px at 8% 0%, rgba(201,163,85,0.09), transparent 55%),
+    var(--dark);
   color: var(--cream);
   line-height: 1.7;
   overflow-x: hidden;
@@ -143,11 +145,12 @@ section { padding: 100px 24px; }
   text-decoration: none;
   font-family: var(--font-body);
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 16px 36px;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
   -webkit-tap-highlight-color: transparent;
@@ -164,11 +167,12 @@ section { padding: 100px 24px; }
   display: inline-block;
   padding: 14px 32px;
   border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 6px;
   color: rgba(255,255,255,0.75);
   text-decoration: none;
   font-family: var(--font-body);
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   transition: border-color 0.3s, color 0.3s;
@@ -207,24 +211,34 @@ section { padding: 100px 24px; }
   font-size: 0.72rem;
   padding: 12px 24px;
   white-space: nowrap;
+  border-radius: 999px;
 }
 
 /* ══ HERO ══ */
 
 .hero {
   padding: 0;
-  background: var(--dark);
+  background:
+    radial-gradient(ellipse 900px 700px at 10% 15%, rgba(180,150,80,0.10), transparent 60%),
+    var(--dark);
 }
 
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 8vw, 6rem);
-  line-height: 1.0;
+  line-height: 1.02;
   margin-bottom: 1.2rem;
-  font-weight: 300;
-  letter-spacing: -1px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
 }
-.hero h1 em { color: var(--gold-light); font-style: italic; }
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, #f3e2b8 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-light); /* fallback si no soporta background-clip */
+}
 
 .hero-question {
   font-family: var(--font-display);
@@ -234,7 +248,7 @@ section { padding: 100px 24px; }
   margin-bottom: 1rem;
   line-height: 1.5;
   max-width: 560px;
-  font-style: italic;
+  font-style: normal;
 }
 
 .hero-body {
@@ -272,54 +286,71 @@ section { padding: 100px 24px; }
 
 /* ══ EL MIEDO REAL ══ */
 
-.miedo { background: var(--dark2); }
+.miedo { background: transparent; }
 
 .miedo h2 {
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 5vw, 3.8rem);
   line-height: 1.15;
   margin-bottom: 3rem;
-  font-weight: 300;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
-.miedo h2 span { color: rgba(201,169,110,0.5); display: block; }
+.miedo h2 span {
+  display: block;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, #f3e2b8 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-light);
+}
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  border: 1px solid rgba(255,255,255,0.07);
+/* Pila de tarjetas: cada una queda "pegada" (sticky) a un punto distinto
+   de la pantalla, así al bajar el scroll se van encimando como un mazo */
+.cards-stack {
+  position: relative;
 }
 
-.card {
-  padding: 2.5rem 2rem;
-  border-right: 1px solid rgba(255,255,255,0.07);
+.stack-card {
+  position: sticky;
+  background: var(--dark2);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 2.6rem 2.8rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
 }
-.card:last-child { border-right: none; }
+
+.stack-card:nth-child(1) { top: 90px;  z-index: 1; }
+.stack-card:nth-child(2) { top: 132px; z-index: 2; }
+.stack-card:nth-child(3) { top: 174px; z-index: 3; }
+.stack-card:nth-child(4) { top: 216px; z-index: 4; }
 
 .card-num {
   font-family: var(--font-display);
-  font-size: 3rem;
+  font-size: 1.6rem;
   font-weight: 300;
   color: var(--gold);
-  opacity: 0.5;
+  opacity: 0.65;
   line-height: 1;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1rem;
   display: block;
+  letter-spacing: 0.05em;
 }
 
 .card-title {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.6vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: -0.3px;
   color: var(--cream);
   margin-bottom: 0.9rem;
-  line-height: 1.55;
-  text-transform: uppercase;
+  line-height: 1.35;
 }
 
 .card-body {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.45);
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.48);
   line-height: 1.85;
 }
 
@@ -353,7 +384,7 @@ section { padding: 100px 24px; }
 
 /* ══ LO QUE CAMBIA ══ */
 
-.cambia { background: var(--dark); }
+.cambia { background: transparent; }
 
 .cambia-inner {
   display: grid;
@@ -367,9 +398,17 @@ section { padding: 100px 24px; }
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   line-height: 1.15;
   margin-bottom: 1.8rem;
-  font-weight: 300;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
-.cambia-left h2 em { color: var(--rust); font-style: italic; }
+.cambia-left h2 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, #f3e2b8 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-light);
+}
 
 .cambia-body {
   font-size: 0.92rem;
@@ -410,7 +449,7 @@ section { padding: 100px 24px; }
 .quote-text {
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 3.5vw, 1.35rem);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   line-height: 1.5;
   color: var(--cream);
@@ -428,16 +467,25 @@ section { padding: 100px 24px; }
 
 /* ══ MI PROPUESTA ══ */
 
-.propuesta { background: var(--dark2); text-align: center; }
+.propuesta { background: transparent; text-align: center; }
 
 .propuesta h2 {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  font-weight: 300;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
-.propuesta h2 em { color: var(--gold-light); font-style: italic; display: block; }
+.propuesta h2 em {
+  font-style: normal;
+  display: block;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, #f3e2b8 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-light);
+}
 
 .propuesta-body {
   font-size: 0.92rem;
@@ -491,7 +539,7 @@ section { padding: 100px 24px; }
 
 .propuesta-footnote {
   font-family: var(--font-display);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.1rem;
   font-weight: 300;
   color: var(--dark2);
@@ -514,7 +562,7 @@ section { padding: 100px 24px; }
 
 /* ══ TESTIMONIOS ══ */
 
-.testimonios { background: var(--dark); }
+.testimonios { background: transparent; }
 
 .testimonios-header {
   text-align: center;
@@ -526,10 +574,18 @@ section { padding: 100px 24px; }
   font-size: clamp(2rem, 5vw, 3.8rem);
   line-height: 1.2;
   margin-bottom: 0.5rem;
-  font-weight: 300;
+  font-weight: 800;
+  letter-spacing: -0.5px;
   color: var(--cream);
 }
-.testimonios-header h2 em { color: var(--gold-light); font-style: italic; }
+.testimonios-header h2 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, #f3e2b8 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-light);
+}
 
 .testimonios-sub {
   font-size: 0.65rem;
@@ -538,6 +594,194 @@ section { padding: 100px 24px; }
   text-transform: uppercase;
   margin-top: 0.4rem;
 }
+
+.testimonios-caption {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 2.2rem;
+}
+
+.testimonios-marquee {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  cursor: grab;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.testimonios-marquee::-webkit-scrollbar { display: none; }
+
+.testimonios-marquee.dragging { cursor: grabbing; scroll-behavior: auto; }
+
+.testimonios-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: max-content;
+}
+
+.testi-shot {
+  height: 320px;
+  width: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.4);
+}
+
+.testi-video {
+  width: 180px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.testi-video video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  object-fit: cover;
+  background: #000;
+  pointer-events: none;
+}
+
+.testi-video {
+  position: relative;
+  cursor: pointer;
+}
+
+.testi-play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.testi-play-icon::after {
+  content: "\25B6";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.6);
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 3px;
+}
+
+.testimonios-marquee-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.testi-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+.testi-nav:hover { background: rgba(0,0,0,.8); border-color: rgba(255,255,255,.5); }
+.testi-nav-prev { left: 8px; }
+.testi-nav-next { right: 8px; }
+
+.testi-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9100;
+  background: rgba(0,0,0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  transition: background .35s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.testi-lightbox-overlay.open {
+  background: rgba(0,0,0,.92);
+  pointer-events: all;
+  opacity: 1;
+}
+
+.testi-lightbox-media {
+  max-width: min(92vw, 480px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+  transform: scale(.92);
+  transition: transform .35s ease;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+  background: #000;
+}
+
+.testi-lightbox-overlay.open .testi-lightbox-media {
+  transform: scale(1);
+}
+
+.testi-lightbox-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-size: 1.8rem;
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+  line-height: 1;
+  font-weight: 300;
+  font-family: var(--font-body);
+  transition: color .2s;
+  z-index: 2;
+}
+.testi-lightbox-close:hover { color: #fff; }
+
+.testi-lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.3);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+.testi-lightbox-nav:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.6); }
+.testi-lightbox-prev { left: 1.5rem; }
+.testi-lightbox-next { right: 1.5rem; }
 
 .testimonios-grid {
   display: grid;
@@ -585,7 +829,7 @@ section { padding: 100px 24px; }
 .testimonio-texto {
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 3.5vw, 1.3rem);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   line-height: 1.65;
   color: var(--cream);
@@ -610,17 +854,25 @@ section { padding: 100px 24px; }
 
 /* ══ PROCESO ══ */
 
-.proceso { background: var(--dark2); text-align: center; }
+.proceso { background: transparent; text-align: center; }
 
 .proceso h2 {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1.1;
   margin-bottom: 72px;
-  font-weight: 300;
+  font-weight: 800;
+  letter-spacing: -0.5px;
   color: var(--cream);
 }
-.proceso h2 em { font-style: italic; color: var(--gold-light); }
+.proceso h2 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, #f3e2b8 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-light);
+}
 
 .steps-grid {
   display: grid;
@@ -672,10 +924,18 @@ section { padding: 100px 24px; }
   font-size: clamp(3rem, 10vw, 7rem);
   line-height: 1;
   margin-bottom: 1.5rem;
-  font-weight: 400;
+  font-weight: 800;
+  letter-spacing: -1.5px;
   color: var(--cream);
 }
-.cta-final h2 em { color: var(--gold-light); font-style: italic; }
+.cta-final h2 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, #f3e2b8 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-light);
+}
 
 .cta-final > .container > p {
   max-width: 550px;
@@ -740,16 +1000,20 @@ footer {
 /* ══ HERO SPLIT (foto vertical + texto) ══ */
 
 .hero-split {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
   align-items: center;
   min-height: 100svh;
-  padding: 80px 4rem 3rem 1.5rem;
+  padding: 80px 2.5rem 3rem 1.5rem;
+  overflow: hidden;
 }
 
 .hero-split-text {
-  padding: 2rem 3rem 2rem 0;
+  position: relative;
+  z-index: 2;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -757,46 +1021,43 @@ footer {
 
 .hero-split-img {
   position: relative;
+  z-index: 2;
   overflow: hidden;
   flex-shrink: 0;
   width: 100%;
-  aspect-ratio: 3/4;
-  max-height: 620px;
+  max-height: 640px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  align-self: center;
+  margin-left: auto;
 }
 
 .hero-split-img img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 7/10;
   object-fit: cover;
   object-position: center 15%;
   display: block;
   filter: contrast(1.03) brightness(0.97);
 }
 
-.hero-img-badge {
+/* Marca de agua gigante de fondo, como en la referencia */
+.hero-watermark {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 24px 28px;
-  background: rgba(10,10,10,0.88);
-  backdrop-filter: blur(6px);
-}
-
-.hero-img-badge .badge-title {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--cream);
-  margin-bottom: 4px;
-}
-
-.hero-img-badge .badge-sub {
-  font-size: 0.72rem;
-  color: var(--gray);
-  font-weight: 300;
+  left: -0.1em;
+  bottom: -0.06em;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(5rem, 16vw, 11rem);
+  line-height: 1;
+  color: rgba(244,242,233,0.05);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* separación frase fechas vs botón */
@@ -819,6 +1080,22 @@ footer {
 
 .recuerdos-header .stag { color: var(--rust); }
 .recuerdos-header .stag-line::before { background: var(--rust); }
+
+.recuerdos-phrase {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--dark);
+  letter-spacing: -0.3px;
+  max-width: 620px;
+  margin-top: 1.2rem;
+}
+.recuerdos-phrase strong {
+  display: block;
+  font-weight: 300;
+  color: var(--rust);
+}
 
 .recuerdos-grid {
   display: grid;
@@ -857,7 +1134,7 @@ footer {
 .adaptados-inner p {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 4vw, 1.7rem);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   color: var(--cream);
   line-height: 1.6;
@@ -908,11 +1185,11 @@ footer {
 /* ══ RESPONSIVE ══ */
 
 @media (max-width: 1100px) {
-  .hero-split { grid-template-columns: 1fr 360px; padding: 80px 2.5rem 2.5rem 1.5rem; }
+  .hero-split { padding: 80px 2rem 2.5rem 1.5rem; gap: 1.5rem; }
 }
 
 @media (max-width: 900px) {
-  /* Hero: texto arriba, foto abajo en mobile/tablet */
+  /* Hero: fotos arriba, texto abajo, como en la referencia */
   .hero-split {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -921,24 +1198,24 @@ footer {
     gap: 0;
   }
   .hero-split-text {
-    padding: 100px 1.5rem 2rem;
-    order: 1;
+    padding: 1.6rem 1.5rem 2rem;
+    order: 2;
   }
   .hero-split-img {
-    order: 2;
+    order: 1;
+    margin-top: 66px; /* despeja el nav fijo */
     width: 100%;
-    aspect-ratio: 4/3;
-    max-height: 56vw;
-    min-height: 260px;
+    max-height: none;
+    min-height: 0;
+    gap: 2px;
   }
+  .hero-split-img img { aspect-ratio: 2/3; }
+  .hero-watermark { font-size: clamp(3.5rem, 18vw, 6rem); bottom: -0.08em; }
 
   .recuerdos-grid { grid-template-columns: repeat(3, 1fr); gap: 4px; }
   .cambia-inner { grid-template-columns: 1fr; gap: 3rem; }
   .cambia-photos { grid-template-columns: 1fr 1fr; }
-  .cards-grid { grid-template-columns: 1fr 1fr; }
-  .card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .card:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.07); }
-  .card:last-child { border-bottom: none; }
+  .stack-card { padding: 2.2rem 2rem; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .service-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .service-card:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.07); }
@@ -951,13 +1228,18 @@ footer {
   .step:last-child { border-bottom: none; }
 }
 
+@media (max-width: 900px) {
+  .testi-shot { height: 260px; }
+}
+
 @media (max-width: 600px) {
+  .testi-shot { height: 220px; }
   section { padding: 60px 24px; }
   .recuerdos { padding: 60px 24px; }
 
   /* Hero mobile */
-  .hero-split-text { padding: 80px 1.2rem 1.5rem; }
-  .hero-split-img { aspect-ratio: 4/3; max-height: none; min-height: 240px; }
+  .hero-split-text { padding: 1.6rem 1.2rem 1.5rem; }
+  .hero-split-img img { aspect-ratio: 2/3; }
   .hero-actions { flex-direction: column; align-items: stretch; gap: 1rem; }
   .hero-actions .btn {
     width: 100%;
@@ -983,19 +1265,18 @@ footer {
     aspect-ratio: 16/7;
   }
 
-  /* ── EL MIEDO REAL: 2 columnas compactas ── */
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    border: none;
-    gap: 3px;
+  /* ── EL MIEDO REAL: pila de tarjetas, offsets más chicos ── */
+  .stack-card {
+    padding: 1.8rem 1.4rem;
+    margin-bottom: 1.2rem;
   }
-  .card {
-    border: 1px solid rgba(255,255,255,0.07) !important;
-    padding: 1.6rem 1.2rem;
-  }
-  .card-num { font-size: 2rem; margin-bottom: 0.7rem; }
-  .card-title { font-size: 0.72rem; }
-  .card-body { font-size: 0.75rem; }
+  .stack-card:nth-child(1) { top: 70px; }
+  .stack-card:nth-child(2) { top: 98px; }
+  .stack-card:nth-child(3) { top: 126px; }
+  .stack-card:nth-child(4) { top: 154px; }
+  .card-num { font-size: 1.3rem; margin-bottom: 0.6rem; }
+  .card-title { font-size: 1.05rem; }
+  .card-body { font-size: 0.82rem; }
 
   /* ── PROPUESTA: 2 columnas ── */
   .services-grid {
@@ -1083,7 +1364,178 @@ footer {
   .wa-float svg { width: 34px; height: 34px; }
 }
 
-/* ══ LIGHTBOX ══ */
+/* ══ COMPARADOR (celular vs profesional) ══ */
+
+.comparador { background: transparent; text-align: center; }
+
+.comparador-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.4rem;
+}
+
+.comparador-hint {
+  font-size: 0.68rem;
+  color: var(--gray);
+  letter-spacing: 0.05em;
+  margin-bottom: 2.5rem;
+}
+
+.comparador-box {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: ew-resize;
+  -webkit-user-select: none;
+  user-select: none;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  touch-action: pan-y;
+}
+
+/* Transición suave sólo durante el barrido automático;
+   se quita apenas el usuario arrastra, para que responda al instante */
+.comparador-box.auto-playing #compBefore,
+.comparador-box.auto-playing #compLine,
+.comparador-box.auto-playing #compBtn {
+  transition: left 1.1s cubic-bezier(.65,0,.35,1), clip-path 1.1s cubic-bezier(.65,0,.35,1);
+}
+
+.comp-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.comp-before { clip-path: inset(0 50% 0 0); }
+
+.comp-handle-line {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255,255,255,0.85);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.comp-handle-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 46px; height: 46px;
+  background: var(--gold);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+.comp-handle-btn svg { width: 18px; height: 18px; fill: none; stroke: var(--black); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.comp-label {
+  position: absolute;
+  top: 16px;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 7px 13px;
+  border-radius: 3px;
+  color: var(--cream);
+  background: rgba(10,10,10,0.65);
+  pointer-events: none;
+}
+.comp-label-left { left: 16px; }
+.comp-label-right { right: 16px; background: var(--gold); color: var(--black); }
+
+/* ══ PREGUNTAS FRECUENTES ══ */
+
+.preguntas { background: transparent; }
+
+.preguntas h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--cream);
+  margin-bottom: 2.5rem;
+}
+.preguntas h2 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, #f3e2b8 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-light);
+}
+
+.faq-list {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 26px 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cream);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding-bottom: 26px;
+}
+
+.faq-answer p {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.5);
+  max-width: 720px;
+}
+
 
 .lightbox-overlay {
   position: fixed;
@@ -1190,11 +1642,9 @@ img.lb-trigger {
     </div>
     <div class="hero-split-img">
       <img src="https://ik.imagekit.io/vkah3x39a/funnel%20baja/1.jpg" alt="Novios - Pixels Fotografía y Video">
-      <div class="hero-img-badge">
-        <p class="badge-title">Agenda limitada</p>
-        <p class="badge-sub">Solo tomamos cierta cantidad de eventos por mes.</p>
-      </div>
+      <img src="https://ik.imagekit.io/vkah3x39a/bajas%2015/8.jpg?updatedAt=1780780872855" alt="15 años - Pixels Fotografía y Video">
     </div>
+    <p class="hero-watermark">Pixels</p>
   </div>
 </section>
 
@@ -1203,6 +1653,7 @@ img.lb-trigger {
   <div class="container">
     <div class="recuerdos-header">
       <div class="stag-line stag">Algunos recuerdos</div>
+      <p class="recuerdos-phrase">Hay días que no tienen segunda oportunidad.<strong>Guardá tus recuerdos para siempre.</strong></p>
     </div>
     <div class="recuerdos-grid">
       <img src="https://ik.imagekit.io/vkah3x39a/funnel%20baja/2.jpg" alt="Recuerdo 1 - Pixels">
@@ -1212,28 +1663,50 @@ img.lb-trigger {
   </div>
 </section>
 
+<!-- 1c · COMPARADOR (celular vs profesional) -->
+<section class="comparador">
+  <div class="container">
+    <div class="stag-line stag" style="justify-content:center;margin-bottom:1.8rem;">La diferencia</div>
+    <h2>La misma escena.<br>Dos <em>recuerdos</em> distintos.</h2>
+    <p class="comparador-sub">Arrastrá para ver la diferencia.</p>
+    <p class="comparador-hint">Arrastrá el círculo · también funciona con las flechas del teclado</p>
+    <div class="comparador-box" id="comparadorBox" tabindex="0" role="slider" aria-label="Comparar celular vs cámara profesional" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+      <!-- FOTO 1 · Comparador · foto tomada con cámara profesional (fondo) -->
+      <img class="comp-img comp-after" src="https://ik.imagekit.io/vkah3x39a/comparativa/pixes%20baa.jpg?updatedAt=1781572086995" alt="Foto tomada con cámara profesional">
+      <!-- FOTO 2 · Comparador · misma escena tomada con celular (se recorta al arrastrar) -->
+      <img class="comp-img comp-before" id="compBefore" src="https://ik.imagekit.io/vkah3x39a/comparativa/foto%20celu.jpg?updatedAt=1781572096917" alt="Foto tomada con celular">
+      <div class="comp-label comp-label-left">Con el celular</div>
+      <div class="comp-label comp-label-right">Conmigo</div>
+      <div class="comp-handle-line" id="compLine"></div>
+      <div class="comp-handle-btn" id="compBtn">
+        <svg viewBox="0 0 24 24"><path d="M8 5l-6 7 6 7M16 5l6 7-6 7"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 2 · EL MIEDO REAL -->
 <section class="miedo">
   <div class="container">
     <div class="stag-line stag" style="margin-bottom:2rem;">El miedo real</div>
     <h2>Meses planeando cada detalle.<br><span>Pero hay algo que no te deja dormir.</span></h2>
-    <div class="cards-grid">
-      <div class="card">
+    <div class="cards-stack">
+      <div class="stack-card">
         <span class="card-num">01</span>
         <p class="card-title">¿Y si las fotos salen sin emoción?</p>
         <p class="card-body">Un recuerdo mediocre puede arruinar todo lo que construiste para ese día.</p>
       </div>
-      <div class="card">
+      <div class="stack-card">
         <span class="card-num">02</span>
         <p class="card-title">¿Y si nadie captura los momentos importantes?</p>
         <p class="card-body">La mirada de tu mamá. El abrazo que te quebró. Lo que nadie más vio.</p>
       </div>
-      <div class="card">
+      <div class="stack-card">
         <span class="card-num">03</span>
         <p class="card-title">"Yo no salgo bien en fotos."</p>
         <p class="card-body">No necesitás posar. Solo vivir el momento. Nosotros hacemos el resto.</p>
       </div>
-      <div class="card">
+      <div class="stack-card">
         <span class="card-num">04</span>
         <p class="card-title">Gastar tanto y no volver a sentir nada.</p>
         <p class="card-body">Querés recuerdos que te hagan volver exactamente a ese día.</p>
@@ -1310,44 +1783,96 @@ img.lb-trigger {
 <section class="testimonios">
   <div class="container">
     <div class="testimonios-header">
-      <div class="stag-line stag" style="justify-content:center;margin-bottom:1.2rem;">Lo que dicen nuestras familias</div>
-      <h2>Ellas ya <em>vivieron</em> la diferencia.</h2>
-      <p class="testimonios-sub">★★★★★ &nbsp;·&nbsp; Más de 120 eventos en Córdoba</p>
+      <div class="stag-line stag" style="justify-content:center;margin-bottom:1.2rem;">Lo que dicen</div>
+      <h2>+200 familias ya <em>guardaron sus recuerdos</em></h2>
+      <p class="testimonios-sub">Mensajes reales, sin filtro ni edición.</p>
     </div>
+  </div>
 
-    <div class="testimonios-swipe-hint">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      deslizá para ver más
+  <p class="testimonios-caption">Capturas reales de WhatsApp ,Facebook y  Google, tal como llegaron de nuestros cliente.</p>
+
+  <div class="testimonios-marquee-wrap">
+    <button class="testi-nav testi-nav-prev" id="testiPrev" aria-label="Ver anteriores">&#8249;</button>
+    <div class="testimonios-marquee" id="testiMarquee">
+      <div class="testimonios-track" id="testiTrack">
+        <!-- VIDEO 1 · Testimonios · reseña en video -->
+        <div class="testi-shot testi-video" data-video="https://res.cloudinary.com/w62x5jaa/video/upload/v1790117969/Screen_Recording_20260920_204017_WhatsApp.mp4">
+          <video playsinline preload="metadata" muted><source src="https://res.cloudinary.com/w62x5jaa/video/upload/v1790117969/Screen_Recording_20260920_204017_WhatsApp.mp4" type="video/mp4"></video>
+          <span class="testi-play-icon"></span>
+        </div>
+        <!-- FOTO 1 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/1.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 2 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/2.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 3 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/3.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 4 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/4.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 5 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/5.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 6 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/6.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 7 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/7.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 8 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/8.png" alt="Testimonio de cliente - Pixels">
+        <!-- VIDEO 2 · Testimonios · reseña en video -->
+        <div class="testi-shot testi-video" data-video="https://res.cloudinary.com/w62x5jaa/video/upload/v1790117968/Screen_Recording_20260920_210931_WhatsApp.mp4">
+          <video playsinline preload="metadata" muted><source src="https://res.cloudinary.com/w62x5jaa/video/upload/v1790117968/Screen_Recording_20260920_210931_WhatsApp.mp4" type="video/mp4"></video>
+          <span class="testi-play-icon"></span>
+        </div>
+        <!-- FOTO 9 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/9.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 10 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/10.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 11 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/11.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 12 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/12.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 13 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/13.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 14 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/14.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 15 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/15.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 16 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/16.png" alt="Testimonio de cliente - Pixels">
+        <!-- VIDEO 3 · Testimonios · reseña en video -->
+        <div class="testi-shot testi-video" data-video="https://res.cloudinary.com/w62x5jaa/video/upload/v1790117968/Screen_Recording_20260920_203735_WhatsApp.mp4">
+          <video playsinline preload="metadata" muted><source src="https://res.cloudinary.com/w62x5jaa/video/upload/v1790117968/Screen_Recording_20260920_203735_WhatsApp.mp4" type="video/mp4"></video>
+          <span class="testi-play-icon"></span>
+        </div>
+        <!-- FOTO 17 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/17.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 18 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/18.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 19 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/19.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 20 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/20.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 21 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/21.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 22 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/22.png" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 23 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/23.jpg" alt="Testimonio de cliente - Pixels">
+        <!-- FOTO 24 · Testimonios · captura WhatsApp/Instagram -->
+        <img class="testi-shot" src="https://ik.imagekit.io/vkah3x39a/baja%20Boda/Capturas/24.jpg" alt="Testimonio de cliente - Pixels">
+      </div>
     </div>
+    <button class="testi-nav testi-nav-next" id="testiNext" aria-label="Ver siguientes">&#8250;</button>
+  </div>
 
-    <div class="testimonios-grid">
+  <!-- LIGHTBOX DE RESEÑAS: fotos y videos con navegación -->
+  <div class="testi-lightbox-overlay" id="testiLightbox" role="dialog" aria-modal="true">
+    <span class="testi-lightbox-close" id="testiLbClose" aria-label="Cerrar">&times;</span>
+    <button class="testi-lightbox-nav testi-lightbox-prev" id="testiLbPrev" aria-label="Anterior">&#8249;</button>
+    <button class="testi-lightbox-nav testi-lightbox-next" id="testiLbNext" aria-label="Siguiente">&#8250;</button>
+    <img class="testi-lightbox-media" id="testiLbImg" src="" alt="" style="display:none;">
+    <video class="testi-lightbox-media" id="testiLbVideo" playsinline controls style="display:none;"></video>
+  </div>
 
-      <div class="testimonio-card">
-        <div class="testimonio-estrellas">
-          <span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span>
-        </div>
-        <p class="testimonio-texto">"Volvería a elegirlos mil veces."</p>
-        <p class="testimonio-autor">— Camila &amp; Juan</p>
-      </div>
-
-      <div class="testimonio-card">
-        <div class="testimonio-estrellas">
-          <span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span>
-        </div>
-        <p class="testimonio-texto">"No sentimos presión ni poses incómodas."</p>
-        <p class="testimonio-autor">— Sofía</p>
-      </div>
-
-      <div class="testimonio-card">
-        <div class="testimonio-estrellas">
-          <span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span>
-        </div>
-        <p class="testimonio-texto">"En las fotos y el video vi lo feliz que estuve ese día."</p>
-        <p class="testimonio-autor">— Martina</p>
-      </div>
-
-    </div>
-
+  <div class="container">
     <div class="testimonios-cta">
       <a href="https://wa.me/543517364379?text=Hola%20Pixels%20%F0%9F%91%8B%0AQuiero%20consultar%20por%20cobertura%20para%20mi%20evento.%0ATipo%20de%20evento%3A%0AFecha%3A%0ADirecci%C3%B3n%20o%20sal%C3%B3n%3A" target="_blank" class="btn" onclick="gtag('event','click_wa_testimonios');fbq('track','Lead')">Quiero que mi historia sea la próxima</a>
     </div>
@@ -1357,7 +1882,8 @@ img.lb-trigger {
 <!-- 7 · PROCESO -->
 <section class="proceso">
   <div class="container">
-    <h2>Así de fácil es empezar</h2>
+    <div class="stag-line stag" style="justify-content:center;margin-bottom:1.8rem;">Cómo trabajamos</div>
+    <h2>Así de fácil<br><em>es empezar.</em></h2>
     <div class="steps-grid">
       <div class="step">
         <div class="step-num">1</div>
@@ -1378,6 +1904,52 @@ img.lb-trigger {
         <div class="step-num">4</div>
         <p class="step-label">Vivís tu día</p>
         <p class="step-body">Vos disfrutás cada momento. Nosotros nos encargamos de que nada se pierda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7b · PREGUNTAS FRECUENTES -->
+<section class="preguntas">
+  <div class="container">
+    <div class="stag-line stag" style="margin-bottom:1.8rem;">Preguntas</div>
+    <h2>Preguntas <em>frecuentes</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>¿Con cuánta anticipación conviene reservar?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Entre 6 y 12 meses. Los mejores meses en Córdoba se reservan primero, y la fecha se confirma únicamente con la seña: sin seña, sigue disponible para otra cliente.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>¿Cuánto sale?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Depende de la fecha, de las horas de cobertura y de si sumás video o una sesión de fotos aparte antes del evento. Escribime por WhatsApp con tu fecha y te paso el presupuesto exacto en el momento, sin que eso te obligue a nada.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>¿Hacés también video?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí. Hay opción de foto + video tanto para bodas como para quince años. Se arma junto con la cobertura de fotos, no por separado, así los dos equipos no se pisan.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>¿Cubrís eventos fuera de Córdoba?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí. Para otras ciudades coordinamos el traslado cuando hablemos por WhatsApp.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1423,6 +1995,304 @@ img.lb-trigger {
 </div>
 
 <script>
+  /* ── PREGUNTAS FRECUENTES: acordeón ── */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', function () {
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+<script>
+  /* ── TESTIMONIOS: carrusel con movimiento continuo en loop ── */
+  (function () {
+    const marquee = document.getElementById('testiMarquee');
+    const track = document.getElementById('testiTrack');
+    if (!marquee || !track) return;
+
+    /* Capturamos los 27 items originales (fotos + videos) ANTES de que
+       se dupliquen para el loop infinito, para el visor con flechas */
+    const items = Array.from(track.children).map(function (node) {
+      if (node.classList.contains('testi-video')) {
+        return { type: 'video', src: node.getAttribute('data-video') };
+      }
+      return { type: 'image', src: node.src, alt: node.alt };
+    });
+
+    const SPEED = 0.045; /* px por ms */
+    let loopWidth = 0;
+    let paused = false;
+    let resumeTimer = null;
+
+    function setup() {
+      /* Duplicamos el contenido una vez para poder loopear sin corte */
+      const original = Array.from(track.children);
+      original.forEach(function (node) {
+        track.appendChild(node.cloneNode(true));
+      });
+      loopWidth = track.scrollWidth / 2;
+      requestAnimationFrame(step);
+    }
+
+    let lastTs = null;
+    function step(ts) {
+      if (lastTs === null) lastTs = ts;
+      const delta = ts - lastTs;
+      lastTs = ts;
+      if (!paused) {
+        marquee.scrollLeft += SPEED * delta;
+        if (marquee.scrollLeft >= loopWidth) {
+          marquee.scrollLeft -= loopWidth;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    if (document.readyState === 'complete') {
+      setup();
+    } else {
+      window.addEventListener('load', setup);
+    }
+
+    function pause() {
+      paused = true;
+      clearTimeout(resumeTimer);
+    }
+    function scheduleResume(delay) {
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function () { paused = false; }, delay);
+    }
+
+    marquee.addEventListener('mouseenter', pause);
+    marquee.addEventListener('mouseleave', function () { scheduleResume(300); });
+
+    /* Arrastre manual: pausa el auto-scroll mientras el usuario desliza,
+       y lo retoma un momento después de soltar */
+    let isDown = false;
+    let startX = 0;
+    let startScroll = 0;
+
+    marquee.addEventListener('pointerdown', function (e) {
+      isDown = true;
+      pause();
+      marquee.classList.add('dragging');
+      startX = e.clientX;
+      startScroll = marquee.scrollLeft;
+      marquee.setPointerCapture(e.pointerId);
+    });
+    marquee.addEventListener('pointermove', function (e) {
+      if (!isDown) return;
+      let next = startScroll - (e.clientX - startX);
+      if (loopWidth > 0) {
+        next = ((next % loopWidth) + loopWidth) % loopWidth;
+      }
+      marquee.scrollLeft = next;
+    });
+    function endDrag() {
+      if (!isDown) return;
+      isDown = false;
+      marquee.classList.remove('dragging');
+      scheduleResume(1500);
+    }
+    marquee.addEventListener('pointerup', endDrag);
+    marquee.addEventListener('pointercancel', endDrag);
+    marquee.addEventListener('pointerleave', endDrag);
+    marquee.addEventListener('touchstart', pause, { passive: true });
+    marquee.addEventListener('touchend', function () { scheduleResume(1500); }, { passive: true });
+    marquee.addEventListener('wheel', function () {
+      pause();
+      scheduleResume(1500);
+    }, { passive: true });
+
+    /* Botones de navegación: avanzan/retroceden el carrusel a mano */
+    const prevBtn = document.getElementById('testiPrev');
+    const nextBtn = document.getElementById('testiNext');
+    const NAV_STEP = 340;
+    function navBy(delta) {
+      pause();
+      let next = marquee.scrollLeft + delta;
+      if (loopWidth > 0) {
+        next = ((next % loopWidth) + loopWidth) % loopWidth;
+      }
+      marquee.scrollTo({ left: next, behavior: 'smooth' });
+      scheduleResume(1500);
+    }
+    if (prevBtn) prevBtn.addEventListener('click', function () { navBy(-NAV_STEP); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { navBy(NAV_STEP); });
+
+    /* ── Visor de reseñas: fotos y videos, con flechas para navegar ── */
+    const testiLightbox = document.getElementById('testiLightbox');
+    const testiLbImg = document.getElementById('testiLbImg');
+    const testiLbVideo = document.getElementById('testiLbVideo');
+    const testiLbClose = document.getElementById('testiLbClose');
+    const testiLbPrev = document.getElementById('testiLbPrev');
+    const testiLbNext = document.getElementById('testiLbNext');
+    let currentIndex = 0;
+
+    function showItem(index) {
+      currentIndex = ((index % items.length) + items.length) % items.length;
+      const item = items[currentIndex];
+      testiLbVideo.pause();
+      if (item.type === 'video') {
+        testiLbImg.style.display = 'none';
+        testiLbVideo.style.display = 'block';
+        testiLbVideo.src = item.src;
+        testiLbVideo.play().catch(function () {});
+      } else {
+        testiLbVideo.style.display = 'none';
+        testiLbVideo.removeAttribute('src');
+        testiLbImg.style.display = 'block';
+        testiLbImg.src = item.src;
+        testiLbImg.alt = item.alt || '';
+      }
+    }
+
+    function openTestiLightbox(index) {
+      pause();
+      showItem(index);
+      testiLightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeTestiLightbox() {
+      testiLightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      testiLbVideo.pause();
+      testiLbVideo.removeAttribute('src');
+      scheduleResume(10000);
+    }
+
+    /* Delegamos el click en el track: como el contenido se duplica para el
+       loop, calculamos a qué item original corresponde cada clon */
+    track.addEventListener('click', function (e) {
+      const el = e.target.closest('.testi-shot');
+      if (!el) return;
+      const allNodes = Array.from(track.children);
+      const domIndex = allNodes.indexOf(el);
+      if (domIndex === -1) return;
+      openTestiLightbox(domIndex % items.length);
+    });
+
+    if (testiLbClose) testiLbClose.addEventListener('click', closeTestiLightbox);
+    if (testiLbPrev) testiLbPrev.addEventListener('click', function (e) { e.stopPropagation(); showItem(currentIndex - 1); });
+    if (testiLbNext) testiLbNext.addEventListener('click', function (e) { e.stopPropagation(); showItem(currentIndex + 1); });
+    if (testiLightbox) {
+      testiLightbox.addEventListener('click', function (e) {
+        if (e.target === testiLightbox) closeTestiLightbox();
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (!testiLightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeTestiLightbox();
+      if (e.key === 'ArrowLeft') showItem(currentIndex - 1);
+      if (e.key === 'ArrowRight') showItem(currentIndex + 1);
+    });
+  })();
+</script>
+
+<script>
+  /* ── COMPARADOR: arrastrar para revelar ── */
+  (function () {
+    const box   = document.getElementById('comparadorBox');
+    const before = document.getElementById('compBefore');
+    const line   = document.getElementById('compLine');
+    const btn    = document.getElementById('compBtn');
+    if (!box) return;
+
+    let dragging = false;
+    let userInteracted = false; /* una vez que el usuario toca el slider, no volvemos a animar solos */
+    let autoTimer = null;
+
+    function setPercent(pct) {
+      pct = Math.max(0, Math.min(100, pct));
+      before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      line.style.left = pct + '%';
+      btn.style.left = pct + '%';
+      box.setAttribute('aria-valuenow', Math.round(pct));
+    }
+
+    function percentFromEvent(clientX) {
+      const rect = box.getBoundingClientRect();
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    function stopAutoPlay() {
+      userInteracted = true;
+      box.classList.remove('auto-playing');
+      clearTimeout(autoTimer);
+    }
+
+    function start(e) {
+      stopAutoPlay();
+      dragging = true;
+      move(e);
+    }
+    function move(e) {
+      if (!dragging) return;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      setPercent(percentFromEvent(clientX));
+    }
+    function end() { dragging = false; }
+
+    box.addEventListener('mousedown', start);
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', end);
+
+    box.addEventListener('touchstart', start, { passive: true });
+    window.addEventListener('touchmove', move, { passive: true });
+    window.addEventListener('touchend', end);
+
+    box.addEventListener('keydown', function (e) {
+      stopAutoPlay();
+      const current = parseFloat(box.getAttribute('aria-valuenow')) || 50;
+      if (e.key === 'ArrowLeft')  setPercent(current - 5);
+      if (e.key === 'ArrowRight') setPercent(current + 5);
+    });
+
+    setPercent(50);
+
+    /* ── Barrido automático: al entrar en pantalla, el comparador se
+       mueve solo (para mostrar que es interactivo) y se detiene apenas
+       el usuario lo toca. Se dispara cada vez que la sección vuelve a
+       aparecer, mientras no haya habido interacción manual. ── */
+    function playAutoSweep() {
+      if (userInteracted) return;
+      box.classList.add('auto-playing');
+      setPercent(50);
+      autoTimer = setTimeout(function () {
+        if (userInteracted) return;
+        setPercent(18);
+        autoTimer = setTimeout(function () {
+          if (userInteracted) return;
+          setPercent(82);
+          autoTimer = setTimeout(function () {
+            if (userInteracted) return;
+            setPercent(50);
+            autoTimer = setTimeout(function () {
+              box.classList.remove('auto-playing');
+            }, 1100);
+          }, 1200);
+        }, 1200);
+      }, 500);
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !userInteracted) {
+            playAutoSweep();
+          }
+        });
+      }, { threshold: 0.5 });
+      observer.observe(box);
+    } else {
+      /* Fallback sin soporte de IntersectionObserver: lo mostramos igual */
+      playAutoSweep();
+    }
+  })();
+</script>
+
+<script>
   /* ── NAV SCROLL ── */
   const navEl = document.querySelector('.nav');
   if (navEl) {
@@ -1445,6 +2315,8 @@ img.lb-trigger {
   document.querySelectorAll('img').forEach(function (img) {
     if (img.closest('.nav-logo')) return;    // excluir logo
     if (img.closest('.wa-float'))  return;    // excluir ícono WA (svg, pero por si acaso)
+    if (img.closest('.comparador-box')) return; // excluir comparador (usa drag, no lightbox)
+    if (img.closest('.testimonios-marquee')) return; // las capturas de reseñas usan su propio visor con flechas
     img.classList.add('lb-trigger');
     img.addEventListener('click', openLightbox);
   });
@@ -1487,5 +2359,7 @@ img.lb-trigger {
 
 </body>
 </html>
+
+
 
 
