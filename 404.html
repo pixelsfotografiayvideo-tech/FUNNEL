@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Página no encontrada · Pixels Fotografía y Video</title>
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600480/camara_z0x9ag.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --dark:  #121b13;
+  --cream: #f4f2e9;
+  --gold:  #c9a355;
+  --gold-light: #ddbd78;
+  --soft:  rgba(244,242,233,0.72);
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+html, body { height:100%; }
+
+body {
+  font-family: var(--font-body);
+  background:
+    radial-gradient(ellipse 1100px 800px at 8% 0%, rgba(201,163,85,0.09), transparent 55%),
+    var(--dark);
+  color: var(--cream);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display:flex; justify-content:center; align-items:center;
+  padding: 28px 24px;
+}
+.nav img { height: 44px; width:auto; display:block; }
+
+main {
+  flex:1;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center;
+  padding: 24px 24px 80px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.stag {
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+h1 em { font-style: normal; color: var(--gold-light); }
+
+p.msg {
+  color: var(--soft);
+  font-size: 1rem;
+  margin-bottom: 36px;
+}
+
+.btn {
+  display:inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  text-decoration:none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 6px;
+  transition: background .3s, transform .2s, box-shadow .3s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(201,163,85,0.3);
+}
+
+.redir {
+  margin-top: 22px;
+  font-size: 0.75rem;
+  color: rgba(244,242,233,0.45);
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/"><img src="https://ik.imagekit.io/vkah3x39a/favicon_io/letras.png?updatedAt=1780797543764" alt="Pixels Fotografía y Video"></a>
+</nav>
+
+<main>
+  <div class="stag">Error 404</div>
+  <h1>Esta página <em>no la encontramos.</em></h1>
+  <p class="msg">El link puede estar roto o la página ya no existe.<br>
+  Pero seguro tu evento sí sigue en pie: volvamos al inicio.</p>
+  <a href="/" class="btn">Volver al inicio</a>
+  <p class="redir">Te llevamos al inicio en <span id="seg">5</span> segundos…</p>
+</main>
+
+<script>
+  // Redirección automática al index
+  var s = 5, el = document.getElementById('seg');
+  var t = setInterval(function () {
+    s--;
+    el.textContent = s;
+    if (s <= 0) { clearInterval(t); window.location.replace('/'); }
+  }, 1000);
+</script>
+
+</body>
+</html>
